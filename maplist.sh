@@ -24,6 +24,15 @@ fi
 GAME_HOME=$HLDS_HOME/serverfiles/$1
 
 #
+# Check if the game folder actually exists.
+#
+if [ ! -d $GAME_HOME ]
+then
+  echo "Game folder $1 not found."
+  exit 1
+fi
+
+#
 # Where to look for maps to generate a list from.
 #
 SEARCH=$GAME_HOME/maps
